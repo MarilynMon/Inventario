@@ -1,0 +1,48 @@
+package com.example.demo.model;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table (name = "usuario")
+public class Usuario {
+	
+	
+	public Usuario(String cedula, String user, String clave) {
+		this.cedula = cedula;
+		this.user = user;
+		this.clave = clave;
+	}
+	public Usuario() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	private String cedula;
+	private String user;
+	private String clave;
+	public String getCedula() {
+		return cedula;
+	}
+	public void setCedula(String cedula) {
+		this.cedula = cedula;
+	}
+	public String getUser() {
+		return user;
+	}
+	public void setUser(String user) {
+		this.user = user;
+	}
+	public String getClave() {
+		return clave;
+	}
+	public void setClave(String clave) {
+		this.clave = clave;
+	}
+	
+	
+	
+
+}

@@ -1,0 +1,36 @@
+package com.example.demo.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.demo.model.*;
+import com.example.demo.repositorio.*;
+
+import java.util.List;
+import java.util.Optional;
+
+@Service
+public class UsuarioService {
+	@Autowired
+	private UsuarioRepository UsuarioRepositorio;
+
+	public Usuario create (Usuario Usuario) {
+		return UsuarioRepositorio.save(Usuario);
+	}
+	
+	public List<Usuario> getAllUsuarios (){
+		return UsuarioRepositorio.findAll();
+	}
+	
+	public void delete (long id) {
+		UsuarioRepositorio.deleteById(id);
+	}
+	
+	public Usuario actualizar (Usuario Usuario){
+		 return UsuarioRepositorio.save(Usuario);
+	}
+	
+	public Optional<Usuario> findById (Long id) {
+		return UsuarioRepositorio.findById(id);
+	}
+}
